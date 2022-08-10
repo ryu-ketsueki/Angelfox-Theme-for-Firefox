@@ -3,7 +3,7 @@
 
 ![](bitmap.png)
 
-#TO DO
+# TO DO
 - Figure out how to match navbar background color to titlebar background color
 - Get Breeze icons working
 - Make the whole interface resemble Kirigami a bit more
