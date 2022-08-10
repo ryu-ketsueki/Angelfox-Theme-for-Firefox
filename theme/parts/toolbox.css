@@ -1,0 +1,53 @@
+/* Toolbox, a container for all toolbars (toolbox#navigator-toolbox):
+ * - menu bar (toolbar#toolbar-menubar)
+ * - tab bar (toolbar#TabsToolbar)
+ * - header bar (toolbar#nav-bar)
+ * - bookmark bar (toolbar#PersonalToolbar)
+ * - add-ons can add their own toolbars (toolbar) */
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+/* Toolbox colors */
+.browser-toolbar {
+	background-color: var(--gnome-headerbar-background) !important;
+}
+.browser-toolbar:-moz-window-inactive {
+	background: var(--gnome-headerbar-background) !important;
+}
+
+/* Overrides: Remove border below the menu bar / above the header bar 
+#TabsToolbar:not([collapsed="true"]) + #nav-bar {
+	border-top-width: 0 !important;
+}
+#navigator-toolbox::after {
+	border-bottom-width: 0 !important;
+}
+*/
+/* Reorder toolbars */
+#navigator-toolbox #nav-bar {
+	-moz-box-ordinal-group: 0;
+}
+#navigator-toolbox #PersonalToolbar {
+	-moz-box-ordinal-group: 2;
+}
+#navigator-toolbox #titlebar {
+	-moz-box-ordinal-group: 1;
+}
+#navigator-toolbox toolbar {
+	-moz-box-ordinal-group: 10;
+}
+#navigator-toolbox #TabsToolbar {
+	-moz-box-ordinal-group: 100;
+}
+
+/* Overrides: Don't shift other toolbars on tab drag and drop */
+#TabsToolbar[movingtab] {
+	padding-bottom: 0 !important;
+}
+#TabsToolbar[movingtab] > .tabbrowser-tabs {
+	padding-bottom: 0 !important;
+	margin-bottom: 0 !important;
+}
+#TabsToolbar[movingtab] + #nav-bar {
+	margin-top: 0 !important;
+}

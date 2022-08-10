@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+@-moz-document url("about:home"), url("about:newtab") {
+  * {
+    font-family: Inter !important;
+  }
+  body {
+    background-image: url("../assets/1.jpg") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+  }
+  .tile {
+    border-radius: 16px !important;
+    height: 96px !important;
+    width: 96px !important;
+    left: -4px !important;
+  }
+  .title span {
+    text-shadow: 2px 2px 2px white;
+    color: black;
+    font-weight: 600 !important;
+    box-sizing: border-box;
+    display: inline-block;
+    white-space: normal !important;
+    overflow: visible !important;
+    position: absolute;
+    align-content: center;
+    width: 88px;
+    z-index: -1;    
+  }
+  .icon-wrapper {
+    height: 96px !important;
+    width: 96px !important;
+    border-radius: 16px !important;
+    filter: invert(100%);
+  }
+  .top-sites-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-gap: 20px;
+    grid-row-gap: 0;
+  }
+  .top-site-outer {
+    filter: invert(100%);
+  }
+  .top-site-outer:hover{
+    background: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(100px);
+  }
+  li.top-site-outer{
+    height: 170px;
+  }
+  .top-sites-list::before {
+    content: "Favorites";
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 24px;
+    position: absolute;
+    top: -15px;
+    left: 25px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+  }
+  .icon.icon-pin-small {
+    display: none !important;
+  }
+  .title.has-icon.pinned::before {
+    content: "📌";
+    position: absolute;
+    color: white;
+    left: -3px;
+    top: -20px;
+  }
+  .section-title span {
+    font-family: "Inter" !important;
+    font-weight: 700 !important;
+    font-size: 24px !important;
+    color: white !important;
+    text-shadow: 2px 2px 2px black;
+  }
+  .context-menu {
+    z-index: 10;
+    position: relative;
+  }
+}
+
+ 
